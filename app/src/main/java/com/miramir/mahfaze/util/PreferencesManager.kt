@@ -1,6 +1,7 @@
 package com.miramir.mahfaze.util
 
 import android.content.Context
+import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 
 object PreferencesManager {
@@ -12,26 +13,20 @@ object PreferencesManager {
             PreferenceManager.getDefaultSharedPreferences(context).getInt(KEY_USER_ID, -1)
 
     fun putUserId(context: Context, id: Int) {
-        PreferenceManager.getDefaultSharedPreferences(context).edit()
-                .putInt(KEY_USER_ID, id)
-                .apply()
+        PreferenceManager.getDefaultSharedPreferences(context).edit { putInt(KEY_USER_ID, id) }
     }
 
     fun getUserEmail(context: Context): String? =
             PreferenceManager.getDefaultSharedPreferences(context).getString(KEY_USER_EMAIL, null)
 
     fun putUserEmail(context: Context, email: String) {
-        PreferenceManager.getDefaultSharedPreferences(context).edit()
-                .putString(KEY_USER_EMAIL, email)
-                .apply()
+        PreferenceManager.getDefaultSharedPreferences(context).edit { putString(KEY_USER_EMAIL, email) }
     }
 
     fun getUserPassword(context: Context): String? =
             PreferenceManager.getDefaultSharedPreferences(context).getString(KEY_USER_PASSWORD, null)
 
     fun putUserPassword(context: Context, password: String) {
-        PreferenceManager.getDefaultSharedPreferences(context).edit()
-                .putString(KEY_USER_PASSWORD, password)
-                .apply()
+        PreferenceManager.getDefaultSharedPreferences(context).edit { putString(KEY_USER_PASSWORD, password) }
     }
 }
