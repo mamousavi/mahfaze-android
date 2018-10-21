@@ -1,11 +1,13 @@
 package com.miramir.mahfaze.data.worker
 
+import android.content.Context
 import androidx.work.Worker
+import androidx.work.WorkerParameters
 import com.miramir.mahfaze.MahfazeApp
 import com.miramir.mahfaze.data.repository.NoteRepository
 import javax.inject.Inject
 
-class SyncWorker : Worker() {
+class SyncWorker(context: Context, params: WorkerParameters) : Worker(context, params) {
     @Inject lateinit var noteRepository: NoteRepository
 
     override fun doWork(): Result {

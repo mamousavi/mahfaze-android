@@ -9,9 +9,9 @@ Mahfaze is a super simple note-taking app with the ability to synchronize notes 
 
 ## Pre-requisites
 
-- Android Studio 3.2 RC 3
+- Android Studio 3.2.1
 - Android SDK Platform 28
-- Kotlin 1.2.70
+- Kotlin 1.2.71
 
 ## Libraries used
 
